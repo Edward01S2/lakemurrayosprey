@@ -3,91 +3,93 @@
 
 {% block content %}
 
-<div class="container-fluid mt-3">
-	<div class="row no-gutters">
+<div class="container">
+	<div class="row my-4">
 
-		<div class="col" id="main">
-
-			<div class="row no-gutters">
-				<div class="col">
-					<div class="video-container">
-						<iframe src="https://www.youtube.com/embed/SpBu4Ri1ZkM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-				</div>
-			</div>
-
-			<div class="row my-3 mr-0">
-				<div class="col-md-6">
-						<a class="weatherwidget-io" href="https://forecast7.com/en/33d92n81d39/gilbert/?unit=us" data-label_1="LAKE MURRAY, SC" data-mode="Both" data-theme="original" >LAKE MURRAY WEATHER</a>
-						<script>
-						!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-						</script>
-				</div>
-				<div class="col-md-6 text-center bg-info text-white">
-					<div class="date-container p-3">
-						<h3>Dates</h3>
-						<ul class="list-unstyled">
-							{% for item in post.get_field('dates') %}
-							<li>{{item.text}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row bg-light my-3 no-gutters">
-				<div class="p-4">
-					{{post.content}}
-				</div>
+		<div class="col">
+			<div class="video-container">
+				<iframe src="https://www.youtube.com/embed/SpBu4Ri1ZkM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 		</div>
 
-		<div class="col-3 px-1 mx-3" id="sticky-sidebar">
-			<div class="py-2 sticky-top">
+	</div>
+	
+	<div class="row no-gutters mb-4">
 
-				<div class="disqus-wrapper">
-						<div id="disqus_thread"></div>
-				</div>
-						
-				<script>
-					/**
-					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
-					*  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
-					*  PLATFORM OR CMS.
-					*  
-					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
-					*  https://disqus.com/admin/universalcode/#configuration-variables
-					*/
-					
-					var disqus_config = function () {
-						// Replace PAGE_URL with your page's canonical URL variable
-						//this.page.url = PAGE_URL;  
-						
-						// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-						this.page.identifier = 22;
-						this.page.title = "camera1"; 
-					};
-					
-					(function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-						var d = document, s = d.createElement('script');
-						
-						// IMPORTANT: Replace EXAMPLE with your forum shortname!
-						s.src = 'https://lakemurrayosprey.disqus.com/embed.js';
-						
-						s.setAttribute('data-timestamp', +new Date());
-						(d.head || d.body).appendChild(s);
-					})();
-				</script>
-				<noscript>
-					Please enable JavaScript to view the 
-					<a href="https://disqus.com/?ref_noscript" rel="nofollow">
-						comments powered by Disqus.
-					</a>
-				</noscript>
+		<div class="col-6">
+			<a class="weatherwidget-io" href="https://forecast7.com/en/33d92n81d39/gilbert/?unit=us" data-label_1="LAKE MURRAY, SC" data-mode="Both" data-theme="original" >LAKE MURRAY WEATHER</a>
+			<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+			</script>
+		</div>
+
+		<div class="col-6 text-center bg-info text-white">
+
+			<div class="date-container p-4">
+				<h3>Dates</h3>
+				<ul class="list-unstyled">
+					{% for item in post.get_field('dates') %}
+					<li>{{item.text}}</li>
+					{% endfor %}
+				</ul>
 			</div>
+
+		</div>
+	</div> <!-- container -->
+	
+
+
+
+	<div class="row">
+		<div class="col">
+			<div class="disqus-wrapper bg-light p-4">
+					<div id="disqus_thread"></div>
+			</div>
+					
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
+				*  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
+				*  PLATFORM OR CMS.
+				*  
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
+				*  https://disqus.com/admin/universalcode/#configuration-variables
+				*/
+				
+				var disqus_config = function () {
+					// Replace PAGE_URL with your page's canonical URL variable
+					this.page.url = 'https://lakemurrayosprey.com';  
+					
+					// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					this.page.identifier = '{{ post.id }}';
+					this.page.title = 'Camera1'; 
+				};
+				
+				(function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					var d = document, s = d.createElement('script');
+					
+					// IMPORTANT: Replace EXAMPLE with your forum shortname!
+					s.src = 'https://lakemurrayosprey.disqus.com/embed.js';
+					
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>
+				Please enable JavaScript to view the 
+				<a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					comments powered by Disqus.
+				</a>
+			</noscript>
 		</div>
 	</div>
-			
-</div>
+				
+		<!-- <div class="row bg-light my-3 no-gutters">
+			<div class="p-4">
+				{{post.content}}
+			</div>
+		</div> -->
+				
+	</div>
 		
 {% endblock %}
