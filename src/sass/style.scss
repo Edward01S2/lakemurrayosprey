@@ -37,7 +37,12 @@ Tags:
 }
 
 #sticky-sidebar {
-    max-height: 100vh;
+    
+}
+
+#disqus_thread {
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .date-container {
