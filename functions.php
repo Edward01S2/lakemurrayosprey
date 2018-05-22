@@ -74,7 +74,7 @@ class StarterSite extends TimberSite {
         echo '<pre>';
         var_dump($var);
         echo '</pre>';
-    }
+	}
 
 }
 
