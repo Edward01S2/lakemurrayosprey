@@ -40,6 +40,21 @@ Tags:
     max-height: 250px;
 }
 
+.subscribe-bar {
+    color: white;
+    background-color: rgba(0,0,0,0.25);
+
+    .bg-opacity {
+        opacity: .4;
+        background-color: black;
+        height: 100%;
+        width: 100%;
+    }
+    p {
+        margin: 0;
+    }
+}
+
 .chat-wrapper {
     height: 85vh;
 }

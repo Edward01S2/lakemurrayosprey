@@ -16,6 +16,38 @@
 				</div>
 			</div>
 
+			<div class="row no-gutters subscribe-bar">
+				<div class="col-12">
+					<p id="live-count" class="p-2 float-left"></p>
+					
+					<script src="https://apis.google.com/js/platform.js"></script>
+
+					<div class="yt-button float-right">
+						<div class="pt-2 pr-2">
+						<div class="g-ytsubscribe" data-channelid="UCl7pt1gW7PsDsBDXXzXIFoA" data-layout="default" data-count="default"></div>
+						</div>
+					</div>
+					<p id="view-count" class="p-2 px-4 float-right"></p>
+					<script>
+					function get_yt(){
+				
+						$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics,liveStreamingDetails&id=SpBu4Ri1ZkM&key=AIzaSyC-pJMMaki35DKZCm1pabltZK4EM4Rd71k',function(data){
+						//console.log(data);
+						if(data.items[0].liveStreamingDetails.concurrentViewers) {
+							document.getElementById('live-count').innerHTML = (data.items[0].liveStreamingDetails.concurrentViewers) + " watching now";
+						}
+						else {
+							document.getElementById('live-count').innerHTML = "0 watching now";
+						}
+						document.getElementById('view-count').innerHTML = "Total Views: " + (data.items[0].statistics.viewCount);
+						});
+					}
+					get_yt();
+					setInterval( get_yt, 10000 );
+					</script>
+				</div>
+			</div>
+
 			<div class="row my-3 mx-0">
 				<div class="col-md-6 bg-weatherblue">
 						<a class="weatherwidget-io" href="https://forecast7.com/en/33d92n81d39/gilbert/?unit=us" data-label_1="LAKE MURRAY, SC" data-mode="Both" data-theme="original" >LAKE MURRAY WEATHER</a>
@@ -35,9 +67,9 @@
 				</div>
 			</div>
 			
-			<div class="row bg-light my-3 no-gutters">
+			<div class="row bg-light mt-3 no-gutters">
 				<div class="col">
-					<div class="disqus-wrapper py-2 px-4">
+					<div class="disqus-wrapper pt-2 px-4">
 						<div id="disqus_thread"></div>
 					</div>
 							
@@ -80,7 +112,7 @@
 			</div>
 		</div>
 
-		<div class="col-4 px-1 ml-3 mb-3" id="sticky-sidebar">
+		<div class="col-4 px-1 ml-3" id="sticky-sidebar">
 			<div class="sidebar sticky-top">
 
 				<div class="chat-wrapper">
