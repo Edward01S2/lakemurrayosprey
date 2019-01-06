@@ -11,7 +11,7 @@
 			<div class="row no-gutters">
 				<div class="col">
 					<div class="video-container">
-						<iframe src="https://www.youtube.com/embed/DoVps_8XqmY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/_NEHwjrccaw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 					<script>
 					function get_yt(){
 				
-						$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics,liveStreamingDetails&id=DoVps_8XqmY&key=AIzaSyC-pJMMaki35DKZCm1pabltZK4EM4Rd71k',function(data){
+						$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics,liveStreamingDetails&id=_NEHwjrccaw&key=AIzaSyC-pJMMaki35DKZCm1pabltZK4EM4Rd71k',function(data){
 						//console.log(data);
 						if(data.items[0].liveStreamingDetails.concurrentViewers) {
 							document.getElementById('live-count').innerHTML = (data.items[0].liveStreamingDetails.concurrentViewers) + " watching now";
